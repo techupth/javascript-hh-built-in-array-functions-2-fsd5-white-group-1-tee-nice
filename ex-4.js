@@ -374,4 +374,14 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+const uniqueMembers = new Set();
+
+bills.forEach((bill) => {
+  if (bill.member !== null) {
+    uniqueMembers.add(bill.member.name);
+  }
+});
+
+const totalMembers = uniqueMembers.size;
+
+console.log(`Unique Members Count: ${totalMembers}`);
