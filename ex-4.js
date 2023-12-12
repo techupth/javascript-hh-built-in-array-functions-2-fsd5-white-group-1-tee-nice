@@ -373,5 +373,18 @@ const bills = [
   },
 ];
 
-// Start coding here
-const totalMembers;
+// Declare ตัว Variable totalMembers โดยให้มี Value เป็นจำนวนสมาชิกทั้งหมดใน bills (โดยที่ไม่นับคนซ้ำ) โดยใช้ Built-in Array Function
+const uniqueMembersSet = new Set(
+  bills
+    .map((bill) => {
+      if (bill.member) {
+        return bill.member.name;
+      } else {
+        return null;
+      }
+    })
+    .filter((name) => name !== null)
+);
+const totalMembers = uniqueMembersSet.size;
+
+console.log(`Unique Members Count: ${totalMembers}`);

@@ -373,4 +373,12 @@ const bills = [
   },
 ];
 
-// Start coding here
+// ให้หายอดชำระรวมทั้งหมดใน bills โดยใช้ Built-in Array Function แล้วทำการแสดงผลค่าออกมาดูทางหน้าจอด้วย
+function totalAmount(bills) {
+  const totalResult = bills.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.total;
+  }, 0);
+  return totalResult;
+}
+
+console.log(" Total bill transaction is " + totalAmount(bills));

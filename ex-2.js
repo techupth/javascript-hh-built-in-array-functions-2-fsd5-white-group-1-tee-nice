@@ -373,6 +373,8 @@ const bills = [
   },
 ];
 
-// Start coding here
+//ให้ Declare ตัว Variable newBills โดยมี Value เป็น Array ที่เก็บ Object รายการสั่งซื้อที่ Property member มี Value ที่ไม่ใช่ null โดยใช้ Built-in Array Function
 
-const newBills;
+const newBills = bills.filter((bill) => bill.member !== null);
+
+console.log(newBills);

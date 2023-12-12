@@ -373,5 +373,16 @@ const bills = [
   },
 ];
 
-// Start coding here
-const billMembers;
+// ให้ Declare ตัว Variable billMembers โดยมี Value เป็น Array ที่เก็บ String ของชื่อของสมาชิกทุกคนที่อยู่ใน bills โดยใช้ Built-in Array Function
+const billMembers = bills
+  .map((bill) => {
+    //ใช้สร้าง Array ใหม่โดยที่แต่ละ element ของ Array ใหม่จะได้มาจากการประมวลผล element ต่าง ๆ ใน Array เดิม
+    if (bill.member) {
+      return bill.member.name;
+    } else {
+      return null;
+    }
+  })
+  .filter((name) => name !== null);
+
+console.log(billMembers);
